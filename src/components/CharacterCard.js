@@ -1,21 +1,23 @@
 import React from "react";
 import {
-    Col, 
     Card,
+    CardImg,
     CardText,
-    CardTitle, 
-    CardImg
+    CardBody, 
+    CardTitle
 } from "reactstrap";
 
-function CharacterCard(props) {
+const CharacterCard = (props) => {
   return (
-    <Col xs="6">
+    <div>
      <Card outline color="warning">
-        <CardImg src={props.image} alt="character" />
+        <CardImg top width="25%" src={props.image} alt="character" />
+        <CardBody>
         <CardTitle>Name: {props.name}</CardTitle>
         <CardText>Species: {props.species}</CardText>
+      </CardBody>
      </Card>
-    </Col>
+    </div>
   );
 }
 
