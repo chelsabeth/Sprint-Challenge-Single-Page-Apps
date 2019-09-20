@@ -2,8 +2,7 @@ import React from "react";
 import Header from "./components/Header.js";
 import CharacterList from "./components/CharacterList.js";
 
-
-export default function App() {
+function App() {
   return (
     <main>
       <Header />
@@ -11,3 +10,4 @@ export default function App() {
     </main>
   );
 }
+export default App;

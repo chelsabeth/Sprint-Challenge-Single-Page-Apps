@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
 
-const CharacterList = props => {
+const CharacterList = () => {
   const [list, setList] = useState([]);
   useEffect(() => {
     const getList = () => {
       axios
         .get("https://rickandmortyapi.com/api/character/")
         .then(res => {
-          setList(res.data['results']);
-          console.log(res);
+          const list = res.data.results;
+          console.log("Character Data", res);
+          setList(list);
         })
         .catch(err => {
           console.log("Sorry, an error has occured", err);
@@ -22,11 +23,13 @@ const CharacterList = props => {
   return (
     <div className="character-list">
       {list.map(character => {
-        <CharacterCard
+        return(
+          <CharacterCard
           image={character.image}
           name={character.name}
           species={character.species}
-        />;
+          />
+        );
       })}
     </div>
   );
