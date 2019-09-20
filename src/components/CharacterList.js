@@ -1,12 +1,24 @@
 import React, { useEffect, useState } from "react";
 
-export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
 
+
+const CharacterList = props => {
+  const [list, setList] = useState([])
   useEffect(() => {
-    // TODO: Add API Request here - must run in `useEffect`
-    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+    const getList = () => {
+      axios
+      .get("https://rickandmortyapi.com/api/character/")
+      .then(res => {
+        setList(res.data)
+        console.log(res)
+      })
+      .catch(err => {
+        console.log("Sorry, an error has occured", err);
+      });
+    }
+    getList();
   }, []);
+
 
   return (
     <section className="character-list">
@@ -14,3 +26,5 @@ export default function CharacterList() {
     </section>
   );
 }
+
+export default CharacterList;
