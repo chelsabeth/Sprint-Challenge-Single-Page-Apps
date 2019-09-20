@@ -38,3 +38,7 @@ main {
 header h1 {
   text-align: center;
 }
+
+.character-card {
+  background: skyblue;
+}
