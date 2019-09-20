@@ -24,7 +24,8 @@ const CharacterList = () => {
     <div className="character-list">
       {list.map(character => {
         return(
-          <CharacterCard
+          <CharacterCard 
+          key={character.id}
           image={character.image}
           name={character.name}
           species={character.species}
