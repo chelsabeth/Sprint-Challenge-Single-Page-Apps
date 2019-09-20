@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import CharacterCard from "./CharacterCard";
 
 
 
@@ -21,9 +23,14 @@ const CharacterList = props => {
 
 
   return (
-    <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
-    </section>
+    <div className="character-list">
+      {list.map (character => {
+        <CharacterCard
+        image={character.image}
+        name={character.name}
+        species={character.species}/> 
+      })}
+    </div>
   );
 }
 
