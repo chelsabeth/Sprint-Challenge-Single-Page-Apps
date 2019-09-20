@@ -2,10 +2,13 @@ import React from "react";
 
 function CharacterCard(props) {
   return (
-    <img src={props.img} alt="character"/> 
-    <div>
+    <div className="character">
+      <img src={props.image} alt="character" />
+      <div className="character-content">
         <h3>Name: {props.name}</h3>
         <h4>Species: {props.species}</h4>
+        <h4>Location: {props.location}</h4>
+      </div>
     </div>
   );
 }
